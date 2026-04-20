@@ -1,0 +1,25 @@
+[package]
+name = "dmarcguard-sdk"
+version = "0.0.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Official Rust SDK for the DMARCguard API (https://dmarcguard.io) - DMARC, SPF, and DKIM monitoring and reporting."
+authors = ["DMARCguard <support@dmarcguard.io>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://dmarcguard.io"
+repository = "https://github.com/dmarcguardhq/dmarcguard-sdk-rust"
+documentation = "https://docs.rs/dmarcguard-sdk"
+keywords = ["dmarc", "spf", "dkim", "email", "security"]
+categories = ["api-bindings", "email", "authentication"]
+
+[lib]
+name = "dmarcguard_sdk"
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
+
+[badges]
+maintenance = { status = "actively-developed" }
