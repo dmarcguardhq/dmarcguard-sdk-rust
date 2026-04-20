@@ -1,4 +1,4 @@
-//! # dmarcguard-sdk
+//! # dmarcguard
 //!
 //! Official Rust SDK for the [DMARCguard](https://dmarcguard.io) API.
 //!

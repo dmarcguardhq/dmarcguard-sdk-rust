@@ -7,7 +7,7 @@
   "include-component-in-tag": false,
   "packages": {
     ".": {
-      "package-name": "dmarcguard-sdk",
+      "package-name": "dmarcguard",
       "changelog-path": "CHANGELOG.md"
     }
   },

@@ -1,5 +1,5 @@
 [package]
-name = "dmarcguard-sdk"
+name = "dmarcguard"
 version = "0.0.0"
 edition = "2021"
 rust-version = "1.75"
@@ -9,12 +9,12 @@ license = "Apache-2.0"
 readme = "README.md"
 homepage = "https://dmarcguard.io"
 repository = "https://github.com/dmarcguardhq/dmarcguard-sdk-rust"
-documentation = "https://docs.rs/dmarcguard-sdk"
+documentation = "https://docs.rs/dmarcguard"
 keywords = ["dmarc", "spf", "dkim", "email", "security"]
 categories = ["api-bindings", "email", "authentication"]
 
 [lib]
-name = "dmarcguard_sdk"
+name = "dmarcguard"
 path = "src/lib.rs"
 
 [dependencies]

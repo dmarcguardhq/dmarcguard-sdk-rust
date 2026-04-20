@@ -1,7 +1,7 @@
 # dmarcguard-sdk-rust
 
-[![crates.io](https://img.shields.io/crates/v/dmarcguard-sdk.svg)](https://crates.io/crates/dmarcguard-sdk)
-[![docs.rs](https://img.shields.io/docsrs/dmarcguard-sdk)](https://docs.rs/dmarcguard-sdk)
+[![crates.io](https://img.shields.io/crates/v/dmarcguard.svg)](https://crates.io/crates/dmarcguard)
+[![docs.rs](https://img.shields.io/docsrs/dmarcguard)](https://docs.rs/dmarcguard)
 [![CI](https://github.com/dmarcguardhq/dmarcguard-sdk-rust/actions/workflows/ci.yml/badge.svg)](https://github.com/dmarcguardhq/dmarcguard-sdk-rust/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
@@ -16,22 +16,22 @@ authentication workflows directly from your Rust applications.
 
 ```toml
 [dependencies]
-dmarcguard-sdk = "0"
+dmarcguard = "0"
 ```
 
 Or with `cargo`:
 
 ```sh
-cargo add dmarcguard-sdk
+cargo add dmarcguard
 ```
 
 ## Usage
 
 ```rust
-use dmarcguard_sdk::{DEFAULT_API_BASE_URL, VERSION};
+use dmarcguard::{DEFAULT_API_BASE_URL, VERSION};
 
 fn main() {
-    println!("dmarcguard-sdk v{VERSION} -> {DEFAULT_API_BASE_URL}");
+    println!("dmarcguard v{VERSION} -> {DEFAULT_API_BASE_URL}");
 }
 ```
 
@@ -43,8 +43,8 @@ Full API surface lands in upcoming releases. Follow progress on
 
 - Website: <https://dmarcguard.io>
 - API docs: <https://docs.dmarcguard.io>
-- Crate: <https://crates.io/crates/dmarcguard-sdk>
-- Rust docs: <https://docs.rs/dmarcguard-sdk>
+- Crate: <https://crates.io/crates/dmarcguard>
+- Rust docs: <https://docs.rs/dmarcguard>
 - Source: <https://github.com/dmarcguardhq/dmarcguard-sdk-rust>
 
 ## Release process
