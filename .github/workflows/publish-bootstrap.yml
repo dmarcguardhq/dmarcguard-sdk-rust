@@ -1,0 +1,44 @@
+name: publish-bootstrap
+
+# TEMPORARY workflow to publish the very first version of the crate while
+# crates.io Trusted Publishing cannot be configured up front. Uses a long-lived
+# API token stored as a GitHub Actions secret.
+#
+# DELETE this workflow (and the `publish` branch) once the crate exists on
+# crates.io and Trusted Publishing has been configured. After that, all
+# subsequent releases are handled by the release-please + OIDC flow in
+# `.github/workflows/ci.yml`.
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  publish:
+    # Only run for a same-repo PR whose head is the `publish` branch. This
+    # prevents the secret token from being reachable from any other PR.
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'publish'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      CARGO_TERM_COLOR: always
+      RUST_BACKTRACE: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+      - name: Verify package builds
+        run: cargo package
+      - name: Publish to crates.io
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
+        run: cargo publish --no-verify
