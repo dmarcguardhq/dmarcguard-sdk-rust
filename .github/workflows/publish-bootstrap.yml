@@ -36,8 +36,6 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
       - name: Cache cargo
         uses: Swatinem/rust-cache@v2
-      - name: Show crate metadata
-        run: cargo pkgid
       - name: Verify package builds
         run: cargo package
       - name: Publish to crates.io
